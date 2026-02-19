@@ -1,0 +1,322 @@
+@import "tailwindcss";
+
+:root {
+  --background: #070510;
+  --foreground: #f8fafc;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-great-vibes: var(--font-great-vibes);
+  --font-amatic: var(--font-amatic);
+  --font-montserrat: var(--font-montserrat);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-montserrat), var(--font-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── Background Glows ── */
+.bg-glow {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-glow-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.15), transparent);
+  top: -100px;
+  left: -100px;
+  animation: glowDrift 12s ease-in-out infinite alternate;
+}
+
+.bg-glow-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(244, 114, 182, 0.1), transparent);
+  bottom: -50px;
+  right: -50px;
+  animation: glowDrift 10s ease-in-out 2s infinite alternate-reverse;
+}
+
+.bg-glow-3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.06), transparent);
+  top: 40%;
+  left: 50%;
+  animation: glowDrift 14s ease-in-out 4s infinite alternate;
+}
+
+@keyframes glowDrift {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(40px, -30px) scale(1.15); }
+}
+
+/* ── Toast ── */
+.toast-enter {
+  animation: toastIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.toast-exit {
+  animation: toastOut 0.3s ease-in forwards;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes toastOut {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(-10px) scale(0.95); }
+}
+
+/* ── Envelope Shake ── */
+@keyframes envelopeShake {
+  0%, 100% { transform: rotate(0deg) translateX(0); }
+  10% { transform: rotate(-1.5deg) translateX(-4px); }
+  20% { transform: rotate(1.5deg) translateX(4px); }
+  30% { transform: rotate(-1deg) translateX(-3px); }
+  40% { transform: rotate(1deg) translateX(3px); }
+  50% { transform: rotate(-0.5deg) translateX(-2px); }
+  60% { transform: rotate(0.5deg) translateX(2px); }
+  70%, 100% { transform: rotate(0deg) translateX(0); }
+}
+
+.envelope-shake {
+  animation: envelopeShake 0.5s ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+}
+
+/* ── Wax Seal Pulse ── */
+.seal-pulse {
+  animation: sealPulse 2s ease-in-out infinite;
+}
+
+@keyframes sealPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4); }
+  50% { transform: scale(1.06); box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); }
+}
+
+/* ── Tap Hint ── */
+.tap-hint {
+  animation: tapFade 2s ease-in-out infinite;
+}
+
+@keyframes tapFade {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+/* ── Card Text Reveal ── */
+.card-text-reveal {
+  animation: cardTextReveal 0.8s ease-out both;
+}
+
+@keyframes cardTextReveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Gold Shimmer ── */
+@keyframes goldShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Sparkle Twinkle ── */
+.sparkle-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.8); }
+}
+
+/* ── Split Glow ── */
+@keyframes splitGlow {
+  0% { opacity: 1; height: 2px; }
+  100% { opacity: 0; height: 8px; }
+}
+
+/* ── Character Animations ── */
+.character-bounce {
+  animation: charBounce 2s ease-in-out infinite;
+}
+
+@keyframes charBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.blink-eyes {
+  animation: blink 4s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 95%, 100% { transform: scaleY(1); }
+  97% { transform: scaleY(0.1); }
+}
+
+.arm-point {
+  animation: armPoint 1.5s ease-in-out infinite;
+}
+
+@keyframes armPoint {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-8deg); }
+}
+
+.arm-wave {
+  animation: armWave 1s ease-in-out infinite;
+}
+
+@keyframes armWave {
+  0%, 100% { transform: rotate(-4deg); }
+  50% { transform: rotate(4deg); }
+}
+
+.hat-wobble {
+  animation: hatWobble 2s ease-in-out infinite;
+}
+
+@keyframes hatWobble {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+/* ── Solar System ── */
+@keyframes sunPulse {
+  0%, 100% { box-shadow: 0 0 60px rgba(251,191,36,0.4), 0 0 120px rgba(245,158,11,0.2), 0 0 200px rgba(217,119,6,0.1); }
+  50% { box-shadow: 0 0 80px rgba(251,191,36,0.5), 0 0 150px rgba(245,158,11,0.25), 0 0 250px rgba(217,119,6,0.15); }
+}
+
+@keyframes orbitRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes planetCounterRotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+/* ── Star field twinkle ── */
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.9; }
+}
+
+/* ── Envelope zoom transition ── */
+@keyframes envelopeZoom {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(4.5); opacity: 0; }
+}
+
+.envelope-zooming {
+  animation: envelopeZoom 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ── Card slide from envelope ── */
+@keyframes cardSlideUp {
+  0% { transform: translateY(60%) scale(0.7); opacity: 0; }
+  60% { transform: translateY(-5%) scale(1.02); opacity: 1; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.card-slide-up {
+  animation: cardSlideUp 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ── Open envelope animation ── */
+@keyframes envelopeFadeDown {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(30vh) scale(0.6); opacity: 0; }
+}
+
+/* ── Confetti ── */
+@keyframes confettiFall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* ── Click Here Pulse ── */
+@keyframes clickHerePulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(251,191,36,0.5), 0 0 30px rgba(251,191,36,0.2);
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(251,191,36,0.7), 0 0 50px rgba(251,191,36,0.3), 0 0 80px rgba(251,191,36,0.1);
+    transform: translateY(-50%) scale(1.1);
+  }
+}
+
+/* ── Fade In ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 0.9; }
+}
+
+/* ── Banner Letter Pop ── */
+@keyframes bannerLetterPop {
+  0% { opacity: 0; transform: scale(0) translateY(30px); }
+  60% { transform: scale(1.2) translateY(-5px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.banner-letter-pop {
+  opacity: 0;
+  animation: bannerLetterPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ── Ink Cursor Blink ── */
+@keyframes inkCursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ── Book Shadow ── */
+.book-shadow {
+  filter: drop-shadow(0 10px 40px rgba(0,0,0,0.35));
+}
+
+/* ── Card Fade Out (envelope card → flipbook transition) ── */
+@keyframes cardFadeOut {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.92); }
+}
+
+.card-fade-out {
+  animation: cardFadeOut 0.6s ease-in forwards;
+}
+
+/* ── Card Stage Enter ── */
+@keyframes cardStageEnter {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.card-stage-enter {
+  animation: cardStageEnter 0.5s ease-out forwards;
+}
+
+/* ── Floating Particles ── */
+@keyframes floatParticle {
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0.2; }
+  50% { transform: translateY(-30px) translateX(15px); opacity: 0.6; }
+}

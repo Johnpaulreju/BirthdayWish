@@ -1,0 +1,1 @@
+export const BIRTHDAY_DATE = "2026-02-19T11:40:00";
