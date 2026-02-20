@@ -273,7 +273,7 @@ export default function CelebratePage() {
                     The world is a better place<br />with you in it
                   </p>
                   <p className="card-text-reveal" style={{ fontFamily: "var(--font-great-vibes)", fontSize: "clamp(1.8rem, 4vw, 3rem)", color: "rgba(120,80,30,0.7)", marginTop: "1rem", animationDelay: "2.1s" }}>
-                    , Aleena
+                    , John
                   </p>
                   <div className="card-text-reveal" style={{ fontSize: "clamp(0.85rem, 1.5vw, 1.1rem)", letterSpacing: "0.3em", color: "rgba(180,130,60,0.3)", marginTop: "1.5rem", animationDelay: "2.4s" }}>
                     &#9472; &#10022; &#9472;
@@ -343,7 +343,7 @@ export default function CelebratePage() {
       {stage === "celebration" && (
         <div className="fixed inset-0 z-50 flex flex-col items-center justify-center" style={{ background: "rgba(7,5,16,0.95)" }}>
           {/* Banner arch */}
-          <BirthdayBanner name="Aleena" />
+          <BirthdayBanner name="John" />
 
           {/* Center content */}
           <div className="flex flex-col items-center gap-6 card-text-reveal" style={{ marginTop: 80 }}>

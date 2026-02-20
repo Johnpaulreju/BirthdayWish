@@ -6,7 +6,7 @@ interface InkLetterProps {
   active: boolean;
 }
 
-const LETTER = `Hey Aleena,
+const LETTER = `Hey John,
 
 I know it's your 12th birthday, and on this special day I just want to wish you the happiest, most wonderful day of your entire life.
 

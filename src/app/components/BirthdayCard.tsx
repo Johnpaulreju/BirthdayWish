@@ -50,7 +50,7 @@ const CoverPage = React.forwardRef<HTMLDivElement, { pageW: number; pageH: numbe
             The world is a better place<br />with you in it
           </p>
           <p style={{ fontFamily: "var(--font-great-vibes)", fontSize: fs.name, color: "rgba(120,80,30,0.7)", marginTop: pageH * 0.02 }}>
-            , Aleena
+            , John
           </p>
           <div style={{ fontSize: fs.flourish * 0.85, letterSpacing: "0.3em", color: "rgba(180,130,60,0.3)", marginTop: pageH * 0.025 }}>
             &#9472; &#10022; &#9472;
